@@ -26,7 +26,7 @@
             <img src="https://miro.medium.com/max/5100/1*CFM9_VhPRrGG755enCmClw.jpeg" class="w-100">
         </div>
         <div class="col-4">
-            <img src="https://www.theweb.com.pk/user/img/new/web-development-in-karachi.jpg" class="w-100">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7XIbZrtnRgDeRvbk-X1y9PnDF4tnoAOq7L07YZkWidfmX-lNiwTUtMRj1YmEu1XCdFvc&usqp=CAU" class="w-100">
         </div>
     </div>
 </div>
