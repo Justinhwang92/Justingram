@@ -18,11 +18,15 @@ class PostsController extends Controller
 
     public function store()
     {
+        // dd(request()->all());
         // Validation
         $data = request()->validate([
             'caption' => 'required',
             'image' => ['required', 'image'], // file must be image type
         ]);
+
+        // this case store the image in the local database
+        $imagePath = request('image')->store('uploads', 'public'); // store(directory for saving, driver)
 
         // $post = new \App\Models\Post();
         // $post->caption = $data['caption'];
@@ -31,10 +35,13 @@ class PostsController extends Controller
         // \App\Models\Post::create($data); // error
 
         // get authenticated user, call the posts from that user, then create with value
-        auth()->user()->posts()->create($data);
+        auth()->user()->posts()->create([
+            'caption' => $data['caption'],
+            'image' => $imagePath,
 
+        ]);
 
-
-        dd(request()->all());
+        // go into authenticated user id profile
+        return redirect('/profile/' . auth()->user()->id);
     }
 }

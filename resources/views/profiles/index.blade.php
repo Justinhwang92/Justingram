@@ -9,7 +9,7 @@
                 <!-- User name display -->
                 <h1>{{ $user->username }}</h1>
                 <!-- button -->
-                <a href="#">Add post</a>
+                <a href="/p/create">Add post</a>
             </div>
             <div class="d-flex">
                 <div class="pr-4"><strong>2568</strong> Posts</div>
@@ -26,15 +26,14 @@
     </div>
 
     <div class="row pt-5">
+        <!-- get user's posts -->
+        @foreach($user->posts as $post)
         <div class="col-4">
-            <img src="https://cdn-media-1.freecodecamp.org/images/1*rV6_99F42Jr7uR5YtLrHrQ.jpeg" class="w-100">
+            <img src="/storage/{{$post->image}}" class="w-100">
         </div>
-        <div class="col-4">
-            <img src="https://miro.medium.com/max/5100/1*CFM9_VhPRrGG755enCmClw.jpeg" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7XIbZrtnRgDeRvbk-X1y9PnDF4tnoAOq7L07YZkWidfmX-lNiwTUtMRj1YmEu1XCdFvc&usqp=CAU" class="w-100">
-        </div>
+        @endforeach
+
+
     </div>
 </div>
 @endsection
